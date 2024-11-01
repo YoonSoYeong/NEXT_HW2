@@ -1,0 +1,32 @@
+@server = http://localhost:3000
+
+#게시글 조회
+GET {{server}}/book
+
+###게시글 생성
+POST {{server}}/book
+Content-Type: application/json
+
+{ 
+    "id": "1",
+  "title": "자유로부터의 도피",
+  "writer": "에리히 프롬", 
+  "isAvailable": true
+}
+
+### 특정 게시글 조회
+GET {{server}}/book/<게시글ID>
+
+### 게시글 삭제
+DELETE {{server}}/book/1
+
+### 게시글 수정
+PUT {{server}}/book/1
+Content-Type: application/json
+
+{
+    "id": "1",
+  "title": "자유로부터의 도피",
+  "writer": "에리히 프롬", 
+  "isAvailable": true
+}
